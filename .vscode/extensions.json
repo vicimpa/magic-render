@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "visualstudioexptteam.vscodeintellicode-completions",
+    "visualstudioexptteam.vscodeintellicode-insiders",
+    "ms-vscode.vscode-typescript-next",
+    "syler.sass-indented",
+    "sibiraj-s.vscode-scss-formatter",
+    "mike-co.import-sorter"
+  ],
+  "unwantedRecommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint"
+  ]
+}
