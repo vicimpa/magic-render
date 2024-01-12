@@ -45,7 +45,7 @@ export class Vec2 {
     const first = args[0] ?? 0;
 
     if (first instanceof Vec2)
-      return this.mutation(first.tuple, mutation);
+      return mutation(first.x, first.y);
 
     return mutation(first, args[1] ?? first);
   }
