@@ -12,8 +12,7 @@ const resizeObserver = new ResizeObserver((entries) => {
 export const canvasResizer = (canvas: HTMLCanvasElement, target?: Element) => {
   target = target ?? canvas.parentElement ?? undefined;
 
-  if (!target)
-    return;
+  if (!target) return;
 
   canvas.classList.add('renderer');
 

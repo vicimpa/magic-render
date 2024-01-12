@@ -10,8 +10,11 @@ export const makeCanvas = (target?: Element, ancorX: number = 0, ancorY = ancorX
   const canvas = document.createElement('canvas')!;
   const context = canvas.getContext('2d')!;
   const anchor = new Vec2(ancorX, ancorY);
+
   target?.appendChild(canvas);
+
   canvasResizer(canvas, target);
+
   makeLooper(() => {
     const size = Vec2.fromSize(canvas);
     anchor.cropMin(cropMin);
@@ -23,5 +26,6 @@ export const makeCanvas = (target?: Element, ancorX: number = 0, ancorY = ancorX
         .cropMax(cropMax)
     ));
   });
+
   return [canvas, context, anchor];
 };

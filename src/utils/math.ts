@@ -1,13 +1,3 @@
-export const rem = (v: number, a: number): number => {
-  if (!isFinite(v)) v = 0;
-  if (v < 0) return rem(v + a, a);
-  return v % a;
-};
-
-export const minMax = (v: number, minV: number, maxV: number) => (
-  min(maxV, max(minV, v))
-);
-
 export const {
   abs,
   acos,
@@ -57,3 +47,18 @@ export const {
 export const PI2 = PI * 2;
 export const PI_2 = PI / 2;
 export const PI_3 = PI / 3;
+
+export const rem = (v: number, a: number): number => {
+  return v %= a;
+};
+
+export const rems = (v: number, a: number): number => {
+  if (v < 0)
+    v += ceil(v / -a) * a;
+
+  return rem(v, a);
+};
+
+export const minMax = (v: number, minV: number, maxV: number) => (
+  min(maxV, max(minV, v))
+);
