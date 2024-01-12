@@ -1,4 +1,4 @@
-import { cos, hypot, max, min, rem, sin } from "utils/math";
+import { cos, hypot, max, min, rem, rems, sin } from "utils/math";
 
 type TMutation = (x: number, y: number) => any;
 type TParameter = [] | [vec: Vec2] | [xy: number] | [x: number, y: number];
@@ -140,6 +140,14 @@ export class Vec2 {
     return this;
   }
 
+  rems(...args: TParameter) {
+    this.mutation(args, (x, y) => {
+      this.x = rems(this.x, x);
+      this.y = rems(this.y, y);
+    });
+    return this;
+  }
+
   clone() {
     return new Vec2(this);
   }
@@ -162,6 +170,10 @@ export class Vec2 {
 
   crem(...args: TParameter) {
     return this.clone().rem(...args);
+  }
+
+  crems(...args: TParameter) {
+    return this.clone().rems(...args);
   }
 
   length() {
